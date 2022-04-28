@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <style>
+        #form{
+            display: grid;
+            align-items: center;
+            
+          
+            margin-left: 30%;
+          
+
+        }
+       
+        
+        h3{
+            text-align: center;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        input{
+    
+            width: 70%;
+            height: 50px;
+            
+        }
+        p{
+            color: grey;
+            font-size: 30px;
+            margin-bottom: 2px;
+        }
+       input:last-child{
+           background: rgb(0, 8, 233);
+           color: white;
+           margin-top: 5rem;
+           border-radius: 20px;
+           
+           
+       }
+        
+      
+       
+        
+    </style>
+</head>
+<body>
+    <div id="con">
+    <img src="https://sso.masaischool.com/brand_dark.svg" alt="masai-logo">
+    <h3>Sign Up</h3>
+    <form id="form">
+
+        <p>Full Name</p>
+        <input type="text" id="name" placeholder="Enter your full name">
+        <p>Email</p>
+        <input type="text" id="mail" placeholder="Enter your Email Id">
+        <p>Password</p>
+        <input type="password" id="pass" placeholder="Enter your password">
+    
+        <input id="button" type="submit">
+    </form>
+</div>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("click",login)
+    localStorage.getItem("Login")
+    var arr=[]
+
+    function login(){
+        event.preventDefault()
+        var data={
+            name:form.name.value,
+            mail:form.mail.value,
+            pass:form.pass.value
+
+        }
+        arr.push(data)
+
+        localStorage.setItem("Login",JSON.stringify(arr))
+
+   
+    }
+
+
+</script>
