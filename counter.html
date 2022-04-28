@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    *{
+        background: #000;
+    }
+    h1{
+        text-align: center;
+        font-size: 200px;
+        font-weight: 900;
+        color: teal;
+    }
+    button{
+        height: 80px;
+        width: 20%;
+        text-align: center;
+        font-size: 40px;
+        
+        align-items: center;
+        justify-content:space-evenly;
+        margin-left: 20%;
+        background: blue;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    }
+    button:hover{
+        background: rgb(10, 10, 116);
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+    
+</style>
+<body>
+    <div id="con">
+       
+       <h1></h1>
+       <button id="in">Increase</button>
+       <button id="dis">Discrease</button>
+
+    </div>
+</body>
+</html>
+<script>
+   
+   var count=localStorage.getItem("counter")||0;
+    document.querySelector("#in").addEventListener("click",IncFun)
+  
+
+    document.querySelector("h1").innerText=count
+    function IncFun(){
+        count++
+        document.querySelector("h1").innerText=count
+        if(count%2===0)
+        {
+            document.querySelector("h1").style.color="yellow"
+        }
+        else{
+            document.querySelector("h1").style.color="white"
+        }
+
+        localStorage.setItem("counter",count)
+
+    }
+
+
+
+    document.querySelector("#dis").addEventListener("click",DisFun)
+
+    function DisFun(){
+        count--
+        document.querySelector("h1").innerText=count
+        if(count%2===0)
+        {
+            document.querySelector("h1").style.color="whitw"
+        }
+        else{
+            document.querySelector("h1").style.color="yellow"
+        }
+        localStorage.setItem("counter",count)
+    }
+
+</script>
